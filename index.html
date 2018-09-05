@@ -21,7 +21,7 @@
     <script>
         $("#email").keyup(function(event){
             let email = $("#email").val()
-            let validator = $("#halo").emailValidator(email)
+            let validator = $().emailValidator(email)
             if(validator){
                 $("#email").css('border','2px solid #27ae60')
                 $("#showInput").text('')
