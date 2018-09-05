@@ -12,7 +12,6 @@
   },
   "keywords": [
     "javascript",
-    "jquery",
     "validation",
     "email"
   ],
@@ -21,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/hacktiv8/jquery-validate-email/issues"
   },
-  "homepage": "https://github.com/hacktiv8/jquery-validate-email#readme"
+  "homepage": "https://github.com/hacktiv8/jquery-validate-email#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "live-server": "^1.2.0"
+  }
 }
