@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>JQuery Plugin</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="./lib/validate-email.js"></script>
+    </head>
+    <body>
+        <label>Email</label>
+        <input type = "text" name = "email" id="input">
+        <p id="show"></p>
+
+        <script>
+            $(document).ready(function(){
+                
+                $('#input').keyup(function(){
+                    let email = $('#input');
+                    console.log(email)
+                    if(email.emailValidator(this.value)){
+                        $("#input").removeClass("error")
+                        $("#input").addClass("success")
+                        $("#show").text(` `)
+                    }else{
+                        $("#input").removeClass("success")
+                        $("#input").addClass("error")
+                        $("#show").text(`Email address is not valid`)
+                    }
+                })
+            })
+        </script>
+
+    </body>
+</html>
