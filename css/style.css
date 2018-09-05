@@ -8,13 +8,13 @@ input.error {
 }
 
 input.success {
-  border: 2px solid #27ae60
+  border: 2px solid #27ae60;
 }
 
-span.error {
+span .error {
   color: #c0392b
 }
 
-span.success {
+span .success {
   color: #27ae60
 }
