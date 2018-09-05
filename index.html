@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  
+  <form action="" name="register">
+    <p>Email</p>
+    <p><input type="text" name="email" id="email"> <span id="msg" style="color: red"></span></p>
+
+    <p>
+      <button type="button">Register</button>
+    </p>
+  </form>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./lib/validate-email.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      let email = $("#email")
+      email.keyup(function() {
+
+        if(!email.emailValidator(this.value)) {
+          email.removeClass();
+          email.addClass('error');
+
+          $('#msg').text('Email address is not valid.');
+        } else {
+          email.removeClass();
+          email.addClass('success');
+
+          $('#msg').text('');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
