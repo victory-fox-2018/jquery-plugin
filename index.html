@@ -15,6 +15,10 @@
 
 <body>
   <input id="email" type="text" name="email">
+  <h2 class="errors" style="
+  color: red;
+  display: none;
+  ">Email error</h2>
 </body>
 
 <script>
@@ -23,9 +27,12 @@
     if (email.emailValidator(this.value)) {
       email.removeClass();
       email.addClass("success");
+      $(".errors").hide();
     } else {
       email.removeClass();
       email.addClass("error");
+      $(".errors").show();
+
     }
   });
 </script>
