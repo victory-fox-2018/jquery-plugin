@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Email Validator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="lib/validate-email.js"></script>
+  </head>
+  
+  <body>
+    <input type="text" id="email">
+    <h3 style="visibility: hidden; color: red">Email address is not valid!</h3>
+    
+    <script>
+    $("#email").keyup(function() {
+      let email = $("#email").val()
+      let cekEmail = $("#email").emailValidator(email)
+
+      if(cekEmail) {
+        $("h3").css("visibility", "hidden")
+        $("#email").removeClass()
+        $("#email").addClass("success")
+      } else {
+        $("h3").css("visibility", "visible")
+        $("#email").addClass("error")
+      }
+    })
+    </script>
+  </body>
+  
+</html>
