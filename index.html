@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./lib/validate-email.js"></script>
+</head>
+<body>
+  <input type="text" placeholder="Input your email" id="email">
+  <span id="output"></span>
+
+  <script>
+    $("#email").keyup(function() {
+      let emailValue = $("#email").val();
+      let status = $("#email").emailValidator(emailValue);
+
+      if(!status) {
+        $("#output")
+          .text('Email address is not valid.')
+          .removeClass('success')
+          .addClass('error');
+
+        $('#email')
+          .removeClass('success')
+          .addClass('error');
+
+      } else {
+        $("#output")
+          .text('Email is valid.')
+          .removeClass('error')
+          .addClass('success');
+
+        $('#email')
+          .removeClass('error')
+          .addClass('success');
+      }
+
+    })
+  </script>
+</body>
+</html>
