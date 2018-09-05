@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>My jQuery Plugin</title>
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <script type="text/javascript" src="./lib/validate-email.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+    <body>
+        <input type="text" id="email">
+        <span id="info"></span>
+        <script>
+            $('#email').keyup(() => {
+                let isEmail = $('#email').emailValidator($('#email').val())
+                if (isEmail) {
+                    $('#email').addClass('success').removeClass('error')
+                    $('#info').text('Email is valid').addClass('success').removeClass('error')
+                } else {
+                    $('#email').addClass('error').removeClass('success')
+                    $('#info').text('Email is invalid').addClass('error').removeClass('success')
+                }
+            })
+        </script>
+    </body>
+</html>
